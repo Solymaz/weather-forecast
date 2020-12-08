@@ -1,0 +1,11 @@
+.searchBox {
+  max-width: 50%;
+  background-color: transparent;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+}
+.searchBox::placeholder {
+  color: white;
+}
