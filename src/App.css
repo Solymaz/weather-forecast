@@ -22,6 +22,7 @@ html {
   max-width: 450px;
   margin: 0 auto;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 .search {
   grid-column: 1/2;
