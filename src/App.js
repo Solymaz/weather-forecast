@@ -4,9 +4,7 @@ import Search from "./Search";
 import "./App.css";
 
 function App() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-  return (
+    return (
     <div className="container">
       <div className="frame">
         <div className="search">

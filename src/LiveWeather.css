@@ -1,4 +1,9 @@
 .liveWeather {
   color: antiquewhite;
   font-family: "Thasadith", sans-serif;
+  line-height: 1;
+  margin-right: 20px;
+}
+.temperature {
+  font-size: 24px;
 }
