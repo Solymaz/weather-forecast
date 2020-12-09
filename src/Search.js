@@ -32,6 +32,7 @@ const Search = (props) => {
   function handleSubmit(event) {
     event.preventDefault();
     showWeather();
+    event.target.children[0].blur();
     event.target.reset();
   }
   function changeCity(event) {
