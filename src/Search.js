@@ -5,8 +5,8 @@ import "./Search.css";
 const Search = (props) => {
   const [city, setCity] = useState(props.defaultCity);
   useEffect(() => {
-    //eslint-disable-next-line react-hooks/exhaustive-deps
     showWeather();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleResponse(response) {
