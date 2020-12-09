@@ -1,9 +1,18 @@
 .liveWeather {
   color: antiquewhite;
-  font-family: "Thasadith", sans-serif;
   line-height: 1;
   margin-right: 20px;
 }
 .temperature {
-  font-size: 24px;
+  font-size: 60px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+.Cdegree {
+  font-size: 12px;
+  position: relative;
+  top: -35px;
+}
+.extraInfo {
+  font-size: 14px;
 }

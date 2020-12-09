@@ -5,7 +5,8 @@
   margin-left: 20px;
   border: none;
   cursor: pointer;
-}
+  line-height: 1.5;
+  }
 .searchBox::placeholder {
   color: white;
-}
+ }
