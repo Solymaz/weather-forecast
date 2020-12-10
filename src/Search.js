@@ -18,6 +18,7 @@ const Search = (props) => {
       city: response.data.name,
       min: Math.round(response.data.main.temp_min),
       max: Math.round(response.data.main.temp_max),
+      date: response.data.dt * 1000,
     });
   }
 

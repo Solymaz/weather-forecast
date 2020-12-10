@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Drawer from "react-bottom-drawer";
 import DrawerContent from "./DrawerContent";
+import "./BottomDrawer.css";
 
 export default function BottomDrawer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +16,7 @@ export default function BottomDrawer() {
   return (
     <div className="Drawer">
       <center>
-        <button className="open-btn" onClick={openDrawer}>
+        <button className="drawerBtn" onClick={openDrawer}>
           ^
         </button>
       </center>

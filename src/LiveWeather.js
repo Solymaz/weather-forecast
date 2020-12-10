@@ -1,11 +1,18 @@
 import React from "react";
+import { format } from "date-fns";
 import "./LiveWeather.css";
 
 const LiveWeather = (props) => {
+  const formattedDate = format(
+    new Date(props.weatherData.date),
+    "iiii HH:mm"
+  );
+
   return (
     <div className="liveWeather">
       <h1 className="city">{props.weatherData.city}</h1>
-      <h4>{props.weatherData.description}</h4>
+      <p className="timeDate">{formattedDate}</p>
+      <h4 className="description">{props.weatherData.description}</h4>
       <p className="temperature">
         {props.weatherData.temperature}
         <span className="Cdegree">°C</span>
