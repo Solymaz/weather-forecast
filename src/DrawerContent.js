@@ -1,35 +1,35 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import axios from "axios";
+import NextHoursWeather from "./NextHoursWeather";
+
 import "./DrawerContent.css";
 
-const DrawerContent = () => {
+export default function DrawerContent(props) {
+  const [hourlyForecast, setHourlyForecast] = useState();
+  useEffect(() => {
+    const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.weatherData.city}&appid=5e1277f84407bf053cd7996650ef4d22&units=metric`;
+    axios
+      .get(weatherForecastApiUrl)
+      .then(handleforecastResponse)
+      .catch(() => {});
+  }, []);
+
+  function handleforecastResponse(response) {
+    setHourlyForecast(response.data);
+    console.log(response.data);
+  }
+
   return (
     <Fragment>
       <div className="btnWrapper">
         <button className="todayBtn">Today</button>
         <button className="nextDaysBtn">Next Days</button>
       </div>
-      <div className="nextHoursWeather">
-        <ul className="time">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-        </ul>
-        <div className="icon">
-          <img src="#" alt="weather icon"></img>
-          <img src="#" alt="weather icon"></img>
-          <img src="#" alt="weather icon"></img>
-          <img src="#" alt="weather icon"></img>
-        </div>
-        <ul className="hourlyTemp">
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
-        </ul>
-      </div>
+      {hourlyForecast &&
+        hourlyForecast.list.slice(0, 4).map(function (hourlyForecast) {
+          return <NextHoursWeather hourlyForecast={hourlyForecast} />;
+        })}
       <div className="nextDaysWeather"></div>
     </Fragment>
   );
-};
-export default DrawerContent;
+}

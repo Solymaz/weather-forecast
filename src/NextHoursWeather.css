@@ -1,0 +1,7 @@
+.nextHoursWeather,
+.nextDaysWeather {
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  grid-template-rows: 100%;
+  align-items: center;
+}

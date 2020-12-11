@@ -18,7 +18,7 @@ function App() {
           </div>
         </div>
         <div className="drawer">
-          <BottomDrawer />
+          <BottomDrawer weatherData={weatherData} />
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import Drawer from "react-bottom-drawer";
 import DrawerContent from "./DrawerContent";
 import "./BottomDrawer.css";
 
-export default function BottomDrawer() {
+export default function BottomDrawer(props) {
   const [isVisible, setIsVisible] = useState(false);
 
   const closeDrawer = () => {
@@ -26,7 +26,7 @@ export default function BottomDrawer() {
         onClose={closeDrawer}
         isVisible={isVisible}
       >
-        <DrawerContent />
+        <DrawerContent weatherData={props.weatherData} />
       </Drawer>
     </div>
   );
