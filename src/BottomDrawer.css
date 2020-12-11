@@ -1,11 +1,11 @@
 .drawerBtn {
   background-color: transparent;
   border: none;
-  border-top: 5px solid whitesmoke;
+  border-bottom: 3px solid whitesmoke;
   position: fixed;
-  bottom: 2px;
+  bottom: 10px;
   width: 20%;
-  font-size: 14px;
+  font-size: 24px;
   color: whitesmoke;
   cursor: pointer;
 }

@@ -16,7 +16,7 @@ export default function BottomDrawer(props) {
   return (
     <div className="drawerWrapper">
       <button className="drawerBtn" onClick={openDrawer}>
-        ^
+        ︿
       </button>
       <div className="Drawer">
         <Drawer
