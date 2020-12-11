@@ -6,6 +6,8 @@ import "./DrawerContent.css";
 
 export default function DrawerContent(props) {
   const [hourlyForecast, setHourlyForecast] = useState();
+  const [showToday, setShowToday] = useState(true);
+
   useEffect(() => {
     const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.weatherData.city}&appid=5e1277f84407bf053cd7996650ef4d22&units=metric`;
     axios
@@ -16,14 +18,23 @@ export default function DrawerContent(props) {
 
   function handleforecastResponse(response) {
     setHourlyForecast(response.data);
-    console.log(response.data);
   }
 
   return (
     <Fragment>
       <div className="btnWrapper">
-        <button className="todayBtn">Today</button>
-        <button className="nextDaysBtn">Next Days</button>
+        <button
+          className={showToday ? "btnActive" : "btn"}
+          onClick={() => setShowToday(true)}
+        >
+          Today
+        </button>
+        <button
+          onClick={() => setShowToday(false)}
+          className={showToday ? "btn" : "btnActive"}
+        >
+          Next Days
+        </button>
       </div>
       {hourlyForecast &&
         hourlyForecast.list.slice(0, 4).map(function (hourlyForecast) {

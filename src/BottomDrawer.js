@@ -14,20 +14,20 @@ export default function BottomDrawer(props) {
   };
 
   return (
-    <div className="Drawer">
-      <center>
-        <button className="drawerBtn" onClick={openDrawer}>
-          ^
-        </button>
-      </center>
-      <Drawer
-        duration={250}
-        hideScrollbars={true}
-        onClose={closeDrawer}
-        isVisible={isVisible}
-      >
-        <DrawerContent weatherData={props.weatherData} />
-      </Drawer>
+    <div className="drawerWrapper">
+      <button className="drawerBtn" onClick={openDrawer}>
+        ^
+      </button>
+      <div className="Drawer">
+        <Drawer
+          duration={250}
+          hideScrollbars={true}
+          onClose={closeDrawer}
+          isVisible={isVisible}
+        >
+          <DrawerContent weatherData={props.weatherData} />
+        </Drawer>
+      </div>
     </div>
   );
 }

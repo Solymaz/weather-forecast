@@ -47,3 +47,8 @@ html {
   max-width: 450px;
   left: auto;
 }
+
+.Drawer > div {
+  display: flex;
+  justify-content: center;
+}
