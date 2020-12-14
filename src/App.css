@@ -9,7 +9,7 @@ html {
 }
 
 .container {
-  background-image: url(media/cover.jpg);
+  background-image: url(media/cover2.jpg);
   background-size: cover;
 }
 
@@ -18,7 +18,7 @@ html {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 2px 2px 6px 6px #4ea8dd inset;
+  box-shadow: 0px 5px 10px 4px #4ea8dd;
   max-width: 450px;
   margin: 0 auto;
   height: 100vh;
@@ -46,6 +46,7 @@ html {
 .Drawer > div > div:nth-child(2) {
   max-width: 450px;
   left: auto;
+  min-height: 306px;
 }
 
 .Drawer > div {

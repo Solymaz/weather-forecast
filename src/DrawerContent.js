@@ -26,12 +26,18 @@ export default function DrawerContent(props) {
       <div className="btnWrapper">
         <button
           className={showToday ? "btnActive" : "btn"}
-          onClick={() => setShowToday(true)}
+          onClick={(event) => {
+            event.preventDefault();
+            setShowToday(true);
+          }}
         >
           Today
         </button>
         <button
-          onClick={() => setShowToday(false)}
+          onClick={(event) => {
+            event.preventDefault();
+            setShowToday(false);
+          }}
           className={showToday ? "btn" : "btnActive"}
         >
           Next Days
