@@ -3,10 +3,7 @@ import { format } from "date-fns";
 import "./LiveWeather.css";
 
 const LiveWeather = (props) => {
-  const formattedDate = format(
-    new Date(props.weatherData.date),
-    "iiii HH:mm"
-  );
+  const formattedDate = format(new Date(props.weatherData.date), "iiii HH:mm");
 
   return (
     <div className="liveWeather">
@@ -17,8 +14,9 @@ const LiveWeather = (props) => {
         {props.weatherData.temperature}
         <span className="Cdegree">°C</span>
       </p>
+      <p className="extraInfo">feels like {props.weatherData.feelsLike}°</p>
       <p className="extraInfo">
-        Min: {props.weatherData.min}°C Max: {props.weatherData.max}°C
+        Min: {props.weatherData.min}° Max: {props.weatherData.max}°
       </p>
       <p className="extraInfo">Wind Speed: {props.weatherData.wind} km/h</p>
       <p className="extraInfo">Humidity: {props.weatherData.humidity}%</p>

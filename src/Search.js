@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Search.css";
 
-const Search = (props) => {
+export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   useEffect(() => {
     showWeather();
   }, []);
 
   function handleResponse(response) {
+    console.log(response);
     props.setWeatherData({
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
@@ -18,6 +19,7 @@ const Search = (props) => {
       min: Math.round(response.data.main.temp_min),
       max: Math.round(response.data.main.temp_max),
       date: response.data.dt * 1000,
+      feelsLike: Math.round(response.data.main.feels_like),
     });
   }
 
@@ -48,6 +50,4 @@ const Search = (props) => {
       />
     </form>
   );
-};
-
-export default Search;
+}

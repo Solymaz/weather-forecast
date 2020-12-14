@@ -36,10 +36,10 @@
   background-color: transparent;
   line-height: 1.5;
   border-bottom: solid 3px transparent;
-  font-size: 18px;
+  font-size: 16px;
 }
 .btnActive {
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   border-bottom: solid 3px #56a0ee;
   background-color: transparent;
