@@ -8,8 +8,9 @@ html {
   font-weight: bold;
 }
 
+
 .container {
-  background-image: url(media/cover2.jpg);
+  background-image: url(media/cover.jpg);
   background-size: cover;
 }
 

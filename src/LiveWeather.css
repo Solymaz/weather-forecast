@@ -19,6 +19,7 @@
   background-color: transparent;
   cursor: pointer;
   color: whitesmoke;
+  padding: 2px;
 }
 .degree:focus {
   outline: none;

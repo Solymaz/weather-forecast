@@ -11,3 +11,7 @@
   color: whitesmoke;
   font-size: 16px;
 }
+.pin {
+  cursor: pointer;
+  font-size: 18px;
+}
