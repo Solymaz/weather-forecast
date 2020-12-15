@@ -10,14 +10,14 @@ export default function DrawerContent(props) {
   const [forecast, setForecast] = useState();
   const [showToday, setShowToday] = useState(true);
 
-  function handleforecastResponse(response) {
+  function handleForecastResponse(response) {
     setForecast(response.data);
   }
   useEffect(() => {
     const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.weatherData.city}&appid=5e1277f84407bf053cd7996650ef4d22&units=metric`;
     axios
       .get(weatherForecastApiUrl)
-      .then(handleforecastResponse)
+      .then(handleForecastResponse)
       .catch(() => {});
   }, []);
 
@@ -43,7 +43,11 @@ export default function DrawerContent(props) {
           ? forecast.list
               .slice(0, 4)
               .map((forecast) => (
-                <WeatherForecast forecast={forecast} hourly={showToday} />
+                <WeatherForecast
+                  forecast={forecast}
+                  hourly={showToday}
+                  unit={props.unit}
+                />
               ))
           : indexes
               //check if the first coming days is the same as today
@@ -64,6 +68,7 @@ export default function DrawerContent(props) {
                 <WeatherForecast
                   forecast={forecast.list[i]}
                   hourly={showToday}
+                  unit={props.unit}
                 />
               )))}
     </Fragment>

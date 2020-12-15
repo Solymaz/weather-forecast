@@ -25,7 +25,7 @@ export default function BottomDrawer(props) {
           onClose={closeDrawer}
           isVisible={isVisible}
         >
-          <DrawerContent weatherData={props.weatherData} />
+          <DrawerContent weatherData={props.weatherData} unit={props.unit} />
         </Drawer>
       </div>
     </div>

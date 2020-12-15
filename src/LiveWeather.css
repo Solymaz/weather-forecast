@@ -7,14 +7,26 @@
   text-align: right;
 }
 .temperature {
-  font-size: 64px;
+  font-size: 74px;
   margin-top: 0%;
   margin-bottom: 0%;
 }
-.Cdegree {
-  font-size: 14px;
+.degree {
+  font-size: 16px;
   position: relative;
-  top: -35px;
+  top: -40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: whitesmoke;
+}
+.degree:focus {
+  outline: none;
+}
+.divider {
+  position: relative;
+  top: -40px;
+  font-size: 16px;
 }
 .extraInfo {
   font-size: 16px;
@@ -28,4 +40,7 @@
 }
 .timeDate {
   font-size: 14px;
+}
+.color {
+  color: #ff7924;
 }

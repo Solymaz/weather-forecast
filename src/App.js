@@ -6,6 +6,8 @@ import "./App.css";
 
 function App() {
   const [weatherData, setWeatherData] = useState();
+  const [unit, setUnit] = useState("celsius");
+
   return (
     <div className="container">
       <div className="frame">
@@ -14,11 +16,17 @@ function App() {
             <Search defaultCity="Stockholm" setWeatherData={setWeatherData} />
           </div>
           <div className="current-weather">
-            {weatherData && <LiveWeather weatherData={weatherData} />}
+            {weatherData && (
+              <LiveWeather
+                weatherData={weatherData}
+                setUnit={setUnit}
+                unit={unit}
+              />
+            )}
           </div>
         </div>
         <div className="drawer">
-          <BottomDrawer weatherData={weatherData} />
+          <BottomDrawer weatherData={weatherData} unit={unit} />
         </div>
       </div>
     </div>

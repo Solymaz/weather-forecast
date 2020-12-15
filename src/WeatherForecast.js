@@ -26,7 +26,10 @@ export default function WeatherForecast(props) {
     forecastTime: format(new Date(props.forecast.dt * 1000), "HH:mm"),
     forecastDay: format(new Date(props.forecast.dt * 1000), "iiii"),
     forecastIcon: props.forecast.weather[0].icon,
-    forecastTemp: Math.round(props.forecast.main.temp),
+    forecastTemp:
+      props.unit === "celsius"
+        ? Math.round(props.forecast.main.temp)
+        : Math.round((props.forecast.main.temp * 9) / 5 + 32),
     forecastDescription: props.forecast.weather[0].description,
   };
   return props.hourly ? (

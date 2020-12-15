@@ -9,7 +9,6 @@ export default function Search(props) {
   }, []);
 
   function handleResponse(response) {
-    console.log(response);
     props.setWeatherData({
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,

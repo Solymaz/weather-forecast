@@ -46,7 +46,6 @@ html {
 .Drawer > div > div:nth-child(2) {
   max-width: 450px;
   left: auto;
-  min-height: 306px;
 }
 
 .Drawer > div {
