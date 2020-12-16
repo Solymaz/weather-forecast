@@ -58,7 +58,6 @@ export default function LiveWeather(props) {
         Min: {min}° Max: {max}°
       </p>
       <p className="extraInfo">Wind Speed: {props.weatherData.wind} km/h</p>
-      <p className="extraInfo">Humidity: {props.weatherData.humidity}%</p>
     </div>
   );
 }

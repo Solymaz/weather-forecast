@@ -11,7 +11,6 @@ export default function Search(props) {
   function handleResponse(response) {
     props.setWeatherData({
       temperature: Math.round(response.data.main.temp),
-      humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
@@ -26,7 +25,6 @@ export default function Search(props) {
     console.log(response);
     props.setWeatherData({
       temperature: Math.round(response.data.list[0].main.temp),
-      humidity: response.data.list[0].main.humidity,
       description: response.data.list[0].weather[0].description,
       wind: Math.round(response.data.list[0].wind.speed),
       city: response.data.city.name,

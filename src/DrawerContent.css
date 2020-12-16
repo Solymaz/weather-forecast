@@ -35,12 +35,14 @@
   background-color: transparent;
   line-height: 1.5;
   border-bottom: solid 3px transparent;
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Shadows Into Light", cursive;
-    font-weight: bold;
+  font-weight: bold;
+  padding-bottom: 5px;
 }
 .btnActive {
-  font-size: 16px;
+  padding-bottom: 5px;
+  font-size: 20px;
   border: none;
   border-bottom: solid 3px #e39f86;
   background-color: transparent;
