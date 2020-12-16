@@ -6,9 +6,10 @@
   border: none;
   cursor: pointer;
   line-height: 1.5;
+  color: #cd694e;
 }
 .searchBox::placeholder {
-  color: whitesmoke;
+  color: #cd694e;
   font-size: 16px;
 }
 .pin {

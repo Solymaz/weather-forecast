@@ -1,12 +1,12 @@
 .drawerBtn {
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid whitesmoke;
+  border-bottom: 3px solid black;
   position: fixed;
   bottom: 10px;
   width: 20%;
   font-size: 24px;
-  color: whitesmoke;
+  color: black;
   cursor: pointer;
 }
 .drawerBtn:focus {

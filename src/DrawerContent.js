@@ -42,8 +42,9 @@ export default function DrawerContent(props) {
         (showToday
           ? forecast.list
               .slice(0, 4)
-              .map((forecast) => (
+              .map((forecast, i) => (
                 <WeatherForecast
+                  key={i}
                   forecast={forecast}
                   hourly={showToday}
                   unit={props.unit}
@@ -61,11 +62,14 @@ export default function DrawerContent(props) {
                 if (shouldShow) {
                   return i;
                 }
+                return undefined;
               })
+              .filter((i) => i !== undefined)
               //show the daily forecast for the next 4 days
               .slice(0, 4)
               .map((i) => (
                 <WeatherForecast
+                  key={i}
                   forecast={forecast.list[i]}
                   hourly={showToday}
                   unit={props.unit}

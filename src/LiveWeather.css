@@ -1,5 +1,5 @@
 .liveWeather {
-  color: antiquewhite;
+  color: black;
   line-height: 1;
   margin-right: 20px;
 }
@@ -18,7 +18,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  color: whitesmoke;
+  color: black;
   padding: 2px;
 }
 .degree:focus {
@@ -31,17 +31,19 @@
 }
 .extraInfo {
   font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .city {
   margin-bottom: 0%;
 }
 .description {
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .timeDate {
   font-size: 14px;
 }
 .color {
-  color: #ff7924;
+  color: #cd694e;
 }
