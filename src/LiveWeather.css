@@ -12,14 +12,16 @@
   margin-bottom: 0%;
 }
 .degree {
-  font-size: 16px;
+  font-size: 17px;
   position: relative;
   top: -40px;
   border: none;
   background-color: transparent;
   cursor: pointer;
   color: black;
-  padding: 2px;
+  padding: 3px;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bold;
 }
 .degree:focus {
   outline: none;
@@ -30,9 +32,9 @@
   font-size: 16px;
 }
 .extraInfo {
-  font-size: 16px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-size: 17px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 .city {
   margin-bottom: 0%;

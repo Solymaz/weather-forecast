@@ -1,12 +1,14 @@
 .searchBox {
   max-width: 60%;
   background-color: transparent;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
   border: none;
+  padding: 10px;
   cursor: pointer;
   line-height: 1.5;
   color: #cd694e;
+  font-family: "Shadows Into Light", cursive;
 }
 .searchBox::placeholder {
   color: #cd694e;
