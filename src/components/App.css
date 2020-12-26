@@ -7,15 +7,13 @@ html {
   text-transform: capitalize;
   width: 100%;
 }
-
 .container {
   background-color: #e8dcdf;
-  background-size: cover;
+  background-size: cover; /* is this actually necessary?*/
 }
-
 .frame {
   background-image: url(../media/cover.gif);
-  background-position: bottom;
+  background-position: bottom; /* Why bottom? If you remove, it looks a bit better on iPad Pro*/
   background-repeat: no-repeat;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -26,28 +24,4 @@ html {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: 100%;
-}
-.current-weather {
-  display: grid;
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
-.drawer {
-  align-self: end;
-}
-
-.Drawer > div > div:nth-child(2) {
-  font-size: 22px;
-  left: auto;
-  max-width: 450px;
-}
-
-.Drawer > div {
-  display: flex;
-  justify-content: center;
-}
-.search {
-  display: grid;
-  grid-column: 1/2;
-  grid-row: 1/2;
 }

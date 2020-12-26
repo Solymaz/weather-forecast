@@ -1,5 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
+import converter from "../converter";
 import "./WeatherForecast.css";
 
 const iconMapping = {
@@ -21,18 +22,18 @@ const iconMapping = {
   "13n": "snow",
 };
 
-export default function WeatherForecast(props) {
+export default function WeatherForecast({ forecastInformation, hourly, unit }) {
   const forecast = {
-    forecastTime: format(new Date(props.forecast.dt * 1000), "HH:mm"),
-    forecastDay: format(new Date(props.forecast.dt * 1000), "iiii"),
-    forecastIcon: props.forecast.weather[0].icon,
+    forecastTime: format(new Date(forecastInformation.dt * 1000), "HH:mm"),
+    forecastDay: format(new Date(forecastInformation.dt * 1000), "iiii"),
+    forecastIcon: forecastInformation.weather[0].icon,
     forecastTemp:
-      props.unit === "celsius"
-        ? Math.round(props.forecast.main.temp)
-        : Math.round((props.forecast.main.temp * 9) / 5 + 32),
-    forecastDescription: props.forecast.weather[0].description,
+      unit === "celsius"
+        ? Math.round(forecastInformation.main.temp)
+        : converter(forecastInformation.main.temp),
+    forecastDescription: forecastInformation.weather[0].description,
   };
-  return props.hourly ? (
+  return hourly ? (
     <div className="WeatherForecast">
       <div>{forecast.forecastTime}</div>
       <img

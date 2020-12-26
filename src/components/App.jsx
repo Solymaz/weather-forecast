@@ -12,22 +12,16 @@ function App() {
     <div className="container">
       <div className="frame">
         <div className="header">
-          <div className="search">
-            <Search defaultCity="Stockholm" setWeatherData={setWeatherData} />
-          </div>
-          <div className="current-weather">
-            {weatherData && (
-              <LiveWeather
-                weatherData={weatherData}
-                setUnit={setUnit}
-                unit={unit}
-              />
-            )}
-          </div>
+          <Search defaultCity="Stockholm" setWeatherData={setWeatherData} />{" "}
+          {weatherData && (
+            <LiveWeather
+              weatherData={weatherData}
+              setUnit={setUnit}
+              unit={unit}
+            />
+          )}
         </div>
-        <div className="drawer">
-          <BottomDrawer weatherData={weatherData} unit={unit} />
-        </div>
+        <BottomDrawer weatherData={weatherData} unit={unit} />
       </div>
     </div>
   );

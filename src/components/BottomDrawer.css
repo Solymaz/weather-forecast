@@ -8,11 +8,21 @@
   color: black;
   cursor: pointer;
   width: 20%;
- }
+}
 .drawerBtn:focus {
   outline: none;
 }
 .drawerWrapper {
+  display: flex;
+  justify-content: center;
+}
+/* Hack to make sure the children (external component)  is only shown inside the Drawer*/
+.Drawer > div > div:nth-child(2) {
+  font-size: 22px;
+  left: auto;
+  max-width: 450px;
+}
+.Drawer > div {
   display: flex;
   justify-content: center;
 }

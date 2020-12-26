@@ -2,6 +2,11 @@
   font-size: 14px;
   margin-left: 20px;
 }
+.search {
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
 .searchBox {
   background-color: transparent;
   border: none;
@@ -22,4 +27,3 @@
   cursor: pointer;
   font-size: 18px;
 }
-

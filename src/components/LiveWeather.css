@@ -1,6 +1,3 @@
-.color {
-  color: #cd694e;
-}
 .city {
   margin-bottom: 0%;
   font-size: 34px;
@@ -20,6 +17,9 @@
 .degree:focus {
   outline: none;
 }
+.color {
+  color: #cd694e;
+}
 .divider {
   font-size: 16px;
   position: relative;
@@ -34,6 +34,11 @@
   font-size: 20px;
   margin-top: 7px;
   margin-bottom: 7px;
+}
+.current-weather {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 .liveWeather {
   color: black;

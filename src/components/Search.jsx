@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Search.css";
 
-export default function Search(props) {
-  const [showError, setShowError] = useState(false);
-  const [city, setCity] = useState(props.defaultCity);
+export default function Search({ defaultCity, setWeatherData }) {
+  const [showCityError, setShowCityError] = useState(false);
+  const [showLocationError, setShowLocationError] = useState(false);
+  const [city, setCity] = useState(defaultCity);
   useEffect(() => {
     showWeather();
   }, []);
 
   function handleResponse(response) {
-    props.setWeatherData({
+    setWeatherData({
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       wind: Math.round(response.data.wind.speed),
@@ -23,7 +24,7 @@ export default function Search(props) {
   }
 
   function handleLocation(response) {
-    props.setWeatherData({
+    setWeatherData({
       temperature: Math.round(response.data.list[0].main.temp),
       description: response.data.list[0].weather[0].description,
       wind: Math.round(response.data.list[0].wind.speed),
@@ -37,10 +38,10 @@ export default function Search(props) {
 
   function showWeather() {
     let currentWeatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f2ba4b7c95e0f3e8dedeafe2da9d569f&units=metric`;
-    axios.get(currentWeatherApiUrl).then(handleResponse).catch(handleError);
-  }
-  function handleError() {
-    setShowError(true);
+    axios
+      .get(currentWeatherApiUrl)
+      .then(handleResponse)
+      .catch(() => setShowCityError(true));
   }
 
   function handleSubmit(event) {
@@ -48,17 +49,15 @@ export default function Search(props) {
     showWeather();
     event.target.children[0].blur();
     event.target.reset();
-    setShowError(false);
+    setShowCityError(false);
+    setShowLocationError(false);
   }
 
-  function changeCity(event) {
-    setCity(event.target.value);
-  }
-
-  function getCoords(event) {
+  function getCoordinates(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(findLiveLocation);
-    setShowError(false);
+    setShowCityError(false);
+    setShowLocationError(false);
   }
 
   function findLiveLocation(GPS) {
@@ -68,23 +67,32 @@ export default function Search(props) {
     axios
       .get(locationApiUrl)
       .then(handleLocation)
-      .catch(() => {});
+      .catch(() => setShowLocationError(true));
   }
 
   return (
-    <>
+    <div className="search">
       <form onSubmit={handleSubmit}>
         <input
           type="search"
           className="searchBox"
           placeholder="Type a city.."
-          onChange={changeCity}
+          onChange={(event) => setCity(event.target.value)}
         />
-        <span onClick={getCoords} className="pin">
+        <span onClick={getCoordinates} className="pin">
           📍
         </span>
-        {showError && <div className="error">The city couldn't be found!</div>}
+        {showCityError && (
+          <div className="error">
+            The city not found! <br /> Check spelling!
+          </div>
+        )}
+        {showLocationError && (
+          <div className="error">
+            Location not found! <br /> Make sure you allow the app to locate you
+          </div>
+        )}
       </form>
-    </>
+    </div>
   );
 }
