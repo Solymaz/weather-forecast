@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import LiveWeather from "./LiveWeather";
-import Search from "./Search";
-import BottomDrawer from "./BottomDrawer";
+import LiveWeather from "./LiveWeather.jsx";
+import Search from "./Search.jsx";
+import BottomDrawer from "./BottomDrawer.jsx";
 import "./App.css";
 
 function App() {

@@ -1,11 +1,11 @@
 body,
 html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
   font-family: "Shadows Into Light", cursive;
-  text-transform: capitalize;
   font-weight: bold;
+  height: 100%;
+  margin: 0;
+  text-transform: capitalize;
+  width: 100%;
 }
 
 .container {
@@ -14,23 +14,18 @@ html {
 }
 
 .frame {
-  background-image: url(media/cover.gif);
+  background-image: url(../media/cover.gif);
   background-position: bottom;
   background-repeat: no-repeat;
-  max-width: 450px;
-  margin: 0 auto;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
+  max-width: 450px;
+  margin: 0 auto;
 }
 .header {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: 100%;
-}
-.search {
-  display: grid;
-  grid-column: 1/2;
-  grid-row: 1/2;
 }
 .current-weather {
   display: grid;
@@ -42,12 +37,17 @@ html {
 }
 
 .Drawer > div > div:nth-child(2) {
-  max-width: 450px;
-  left: auto;
   font-size: 22px;
+  left: auto;
+  max-width: 450px;
 }
 
 .Drawer > div {
   display: flex;
   justify-content: center;
+}
+.search {
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }

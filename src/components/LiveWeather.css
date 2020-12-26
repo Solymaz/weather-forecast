@@ -1,0 +1,53 @@
+.color {
+  color: #cd694e;
+}
+.city {
+  margin-bottom: 0%;
+  font-size: 34px;
+}
+.degree {
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  padding: 3px;
+  top: -40px;
+}
+.degree:focus {
+  outline: none;
+}
+.divider {
+  font-size: 16px;
+  position: relative;
+  top: -40px;
+}
+.description {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.extraInfo {
+  font-size: 20px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.liveWeather {
+  color: black;
+  line-height: 1;
+  margin-right: 20px;
+}
+.liveWeather > * {
+  text-align: right;
+}
+.temperature {
+  font-size: 74px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+.timeDate {
+  font-size: 20px;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Drawer from "react-bottom-drawer";
-import DrawerContent from "./DrawerContent";
+import DrawerContent from "./DrawerContent.jsx";
 import "./BottomDrawer.css";
 
 export default function BottomDrawer(props) {

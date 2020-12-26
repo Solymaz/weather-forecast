@@ -1,14 +1,18 @@
+.error {
+  font-size: 14px;
+  margin-left: 20px;
+}
 .searchBox {
-  max-width: 60%;
   background-color: transparent;
+  border: none;
+  color: #cd694e;
+  cursor: pointer;
+  font-family: "Shadows Into Light", cursive;
+  line-height: 1.5;
   margin-top: 10px;
   margin-left: 10px;
-  border: none;
+  max-width: 60%;
   padding: 10px;
-  cursor: pointer;
-  line-height: 1.5;
-  color: #cd694e;
-  font-family: "Shadows Into Light", cursive;
 }
 .searchBox::placeholder {
   color: #cd694e;
@@ -18,3 +22,4 @@
   cursor: pointer;
   font-size: 18px;
 }
+

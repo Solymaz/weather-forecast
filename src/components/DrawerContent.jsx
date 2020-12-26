@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import { isSameDay } from "date-fns";
-import WeatherForecast from "./WeatherForecast";
+import WeatherForecast from "./WeatherForecast.jsx";
 import "./DrawerContent.css";
 
 const indexes = [4, 12, 20, 28, 36];
@@ -25,14 +25,14 @@ export default function DrawerContent(props) {
     <Fragment>
       <div className="btnWrapper">
         <button
-          className={showToday ? "btnActive" : "btn"}
+          className={`btn ${showToday && "btnActive"}`}
           onClick={() => setShowToday(true)}
         >
           Today
         </button>
         <button
           onClick={() => setShowToday(false)}
-          className={showToday ? "btn" : "btnActive"}
+          className={`btn ${!showToday && " btnActive"}`}
         >
           Next Days
         </button>

@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Search.css";
 
 export default function Search(props) {
+  const [showError, setShowError] = useState(false);
   const [city, setCity] = useState(props.defaultCity);
   useEffect(() => {
     showWeather();
@@ -22,7 +23,6 @@ export default function Search(props) {
   }
 
   function handleLocation(response) {
-    console.log(response);
     props.setWeatherData({
       temperature: Math.round(response.data.list[0].main.temp),
       description: response.data.list[0].weather[0].description,
@@ -37,10 +37,10 @@ export default function Search(props) {
 
   function showWeather() {
     let currentWeatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f2ba4b7c95e0f3e8dedeafe2da9d569f&units=metric`;
-    axios
-      .get(currentWeatherApiUrl)
-      .then(handleResponse)
-      .catch(() => {});
+    axios.get(currentWeatherApiUrl).then(handleResponse).catch(handleError);
+  }
+  function handleError() {
+    setShowError(true);
   }
 
   function handleSubmit(event) {
@@ -48,6 +48,7 @@ export default function Search(props) {
     showWeather();
     event.target.children[0].blur();
     event.target.reset();
+    setShowError(false);
   }
 
   function changeCity(event) {
@@ -57,6 +58,7 @@ export default function Search(props) {
   function getCoords(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(findLiveLocation);
+    setShowError(false);
   }
 
   function findLiveLocation(GPS) {
@@ -70,16 +72,19 @@ export default function Search(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="search"
-        className="searchBox"
-        placeholder="Type a city.."
-        onChange={changeCity}
-      />
-      <span onClick={getCoords} className="pin">
-        📍
-      </span>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="search"
+          className="searchBox"
+          placeholder="Type a city.."
+          onChange={changeCity}
+        />
+        <span onClick={getCoords} className="pin">
+          📍
+        </span>
+        {showError && <div className="error">The city couldn't be found!</div>}
+      </form>
+    </>
   );
 }
