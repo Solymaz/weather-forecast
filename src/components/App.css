@@ -20,6 +20,21 @@ html {
   max-width: 450px;
   margin: 0 auto;
 }
+.fixed-bottom {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  display: none;
+}
+.github {
+  display: block;
+  color: black;
+  position: fixed;
+  bottom: 0%;
+}
+.github:hover {
+  color: #e29488;
+}
 .header {
   display: grid;
   grid-template-columns: 40% 60%;

@@ -20,6 +20,13 @@ function App() {
               unit={unit}
             />
           )}
+          <a
+            href="https://github.com/Solymaz/weather-forecast"
+            target="_blank"
+            className="fixed-bottom github"
+          >
+            <i class="fab fa-github fa-2x"></i>
+          </a>
         </div>
         <BottomDrawer weatherData={weatherData} unit={unit} />
       </div>
