@@ -7,12 +7,17 @@ import "./App.css";
 function App() {
   const [weatherData, setWeatherData] = useState();
   const [unit, setUnit] = useState("celsius");
+  const [forecast, setForecast] = useState();
 
   return (
     <div className="container">
       <div className="frame">
         <div className="header">
-          <Search defaultCity="Stockholm" setWeatherData={setWeatherData} />{" "}
+          <Search
+            defaultCity="Stockholm"
+            setWeatherData={setWeatherData}
+            setForecast={setForecast}
+          />{" "}
           {weatherData && (
             <LiveWeather
               weatherData={weatherData}
@@ -28,7 +33,7 @@ function App() {
             <i class="fab fa-github fa-2x"></i>
           </a>
         </div>
-        <BottomDrawer weatherData={weatherData} unit={unit} />
+        <BottomDrawer unit={unit} forecast={forecast} />
       </div>
     </div>
   );

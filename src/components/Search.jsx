@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Search.css";
 
-export default function Search({ defaultCity, setWeatherData }) {
+export default function Search({ defaultCity, setWeatherData, setForecast }) {
   const [showCityError, setShowCityError] = useState(false);
   const [showLocationError, setShowLocationError] = useState(false);
   const [city, setCity] = useState(defaultCity);
   useEffect(() => {
     showWeather();
+    weatherForecast(city);
   }, []);
 
   function handleResponse(response) {
@@ -34,6 +35,7 @@ export default function Search({ defaultCity, setWeatherData }) {
       date: response.data.list[0].dt * 1000,
       feelsLike: Math.round(response.data.list[0].main.feels_like),
     });
+    weatherForecast(response.data.city.name);
   }
 
   function showWeather() {
@@ -47,6 +49,7 @@ export default function Search({ defaultCity, setWeatherData }) {
   function handleSubmit(event) {
     event.preventDefault();
     showWeather();
+    weatherForecast(city);
     event.target.children[0].blur();
     event.target.reset();
     setShowCityError(false);
@@ -68,6 +71,16 @@ export default function Search({ defaultCity, setWeatherData }) {
       .get(locationApiUrl)
       .then(handleLocation)
       .catch(() => setShowLocationError(true));
+  }
+
+  function weatherForecast(city) {
+    const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=5e1277f84407bf053cd7996650ef4d22&units=metric`;
+    axios
+      .get(weatherForecastApiUrl)
+      .then((response) => {
+        setForecast(response.data);
+      })
+      .catch(() => {});
   }
 
   return (

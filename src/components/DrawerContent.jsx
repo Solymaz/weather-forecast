@@ -1,29 +1,16 @@
-import React, { Fragment, useState, useEffect } from "react";
-import axios from "axios";
+import React, { Fragment, useState } from "react";
 import { isSameDay } from "date-fns";
 import WeatherForecast from "./WeatherForecast.jsx";
 import "./DrawerContent.css";
 
 const indexes = [4, 12, 20, 28, 36];
 
-export default function DrawerContent({ weatherData, unit }) {
-  const [forecast, setForecast] = useState();
+export default function DrawerContent({ forecast, unit }) {
   const [showToday, setShowToday] = useState(true);
-  const [showError, setShowError] = useState(false);
-
-  useEffect(() => {
-    const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherData.city}&appid=5e1277f84407bf053cd7996650ef4d22&units=metric`;
-    axios
-      .get(weatherForecastApiUrl)
-      .then((response) => {
-        setForecast(response.data);
-      })
-      .catch(() => setShowError(true));
-  }, []);
 
   return (
     <Fragment>
-      {showError ? (
+      {!forecast ? (
         <div className="errorMsg">
           Oops, forecast is not available now! <br />
           Plz try again
