@@ -9,16 +9,21 @@ html {
 }
 .container {
   background-color: #e8dcdf;
-  background-size: cover; /* is this actually necessary?*/
 }
 .frame {
   background-image: url(../media/cover.gif);
-  background-position: bottom; /* Why bottom? If you remove, it looks a bit better on iPad Pro*/
+  background-position: bottom;
   background-repeat: no-repeat;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   max-width: 450px;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .frame {
+    background-size: cover;
+    max-width: 100%;
+  }
 }
 .fixed-bottom {
   max-width: 500px;

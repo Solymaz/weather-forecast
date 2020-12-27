@@ -1,13 +1,13 @@
 .drawerBtn {
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid black;
   position: fixed;
   bottom: 10px;
-  font-size: 24px;
+  font-size: 30px;
   color: black;
   cursor: pointer;
   width: 20%;
+  animation: jump 1s infinite ease-in-out 3s;
 }
 .drawerBtn:focus {
   outline: none;
@@ -22,7 +22,24 @@
   left: auto;
   max-width: 450px;
 }
+/*iPad and iPad  Pro view*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .Drawer > div > div:nth-child(2) {
+    max-width: 100%;
+  }
+}
 .Drawer > div {
   display: flex;
   justify-content: center;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
