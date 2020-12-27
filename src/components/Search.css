@@ -10,18 +10,19 @@
 .searchBox {
   background-color: transparent;
   border: none;
-  color: #cd694e;
   cursor: pointer;
   font-family: "Shadows Into Light", cursive;
   line-height: 1.5;
   margin-top: 10px;
   margin-left: 10px;
-  max-width: 70%;
+  max-width: 75%;
   padding: 10px;
+  font-size: 18px;
 }
 .searchBox::placeholder {
-  color: #cd694e;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
 }
 .pin {
   cursor: pointer;
