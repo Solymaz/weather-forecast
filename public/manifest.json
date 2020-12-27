@@ -1,0 +1,19 @@
+{
+  "short_name": "SoliWeather",
+  "description": "Weather forecast",
+  "icons": [
+    {
+      "src": "/icons/app-icon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+      {
+      "src": "/icons/app-icon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+    ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#e29488"
+}
