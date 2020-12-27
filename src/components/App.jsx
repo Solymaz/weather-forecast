@@ -30,7 +30,7 @@ function App() {
             target="_blank"
             className="fixed-bottom github"
           >
-            <i class="fab fa-github fa-2x"></i>
+            <i className="fab fa-github fa-2x"></i>
           </a>
         </div>
         <BottomDrawer unit={unit} forecast={forecast} />
